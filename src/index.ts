@@ -5,8 +5,15 @@ interface User{
     age:number
 }
 
+type UserProfile = Pick<User, 'name'|'email'>;
+
 function sumOfAge(user1: User,user2:User):number{
     return user1.age + user2.age
+}
+
+function displayUserProfile(up:UserProfile):void{
+    console.log(`Name : ${up.name}`);
+    console.log(`Email : ${up.email}`);
 }
 
 let user1: User={
@@ -24,3 +31,5 @@ let user2: User={
 }
 
 console.log(sumOfAge(user1,user2));
+displayUserProfile(user1);
+displayUserProfile({ name: "Priya", email: "priya@example.com" });
