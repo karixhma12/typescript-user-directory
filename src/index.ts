@@ -1,4 +1,4 @@
-interface User{
+/*interface User{
     id:number,
     name:string,
     email:string,
@@ -43,4 +43,16 @@ let user2: User={
 
 console.log(sumOfAge(user1,user2));
 displayUserProfile(user1);
-displayUserProfile({ name: "Priya", email: "priya@example.com" });
+displayUserProfile({ name: "Priya", email: "priya@example.com" });*/
+
+
+
+interface Config{
+    endpoint : string,
+    apiKey : string
+}
+
+const config : Readonly<Config> = {
+    endpoint : "https://api.example.com",
+    apiKey : "abcdef123456"
+}
