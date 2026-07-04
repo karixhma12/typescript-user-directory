@@ -7,9 +7,20 @@ interface User{
 
 type UserProfile = Pick<User, 'name'|'email'>;
 
+type UpdateProps = Pick<User, 'name' | 'email' | 'age'>;
+type UpdatePropsOptional = Partial<UpdateProps>;
+
 function sumOfAge(user1: User,user2:User):number{
     return user1.age + user2.age
 }
+
+function updateUser(updatedProps : UpdatePropsOptional): void{
+    console.log("Updating user with : ", updatedProps);
+}
+
+updateUser({ email: "new@example.com" });
+updateUser({ name: "New Name", age: 30 });
+updateUser({});
 
 function displayUserProfile(up:UserProfile):void{
     console.log(`Name : ${up.name}`);

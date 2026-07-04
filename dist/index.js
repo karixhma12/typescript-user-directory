@@ -3,6 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function sumOfAge(user1, user2) {
     return user1.age + user2.age;
 }
+function updateUser(updatedProps) {
+    console.log("Updating user with : ", updatedProps);
+}
+updateUser({ email: "new@example.com" });
+updateUser({ name: "New Name", age: 30 });
+updateUser({});
 function displayUserProfile(up) {
     console.log(`Name : ${up.name}`);
     console.log(`Email : ${up.email}`);
