@@ -45,7 +45,7 @@ console.log(sumOfAge(user1,user2));
 displayUserProfile(user1);
 displayUserProfile({ name: "Priya", email: "priya@example.com" });*/
 
-type Users = Record<string,User>;
+/*type Users = Record<string,User>;
 
 const users:Users = {
     "abc123" : {id: 1, name: "John Doe", email: "john@example.com", age: 30 },
@@ -60,4 +60,16 @@ usersMap.set("abc123",{id: 1, name: "John Doe", email: "john@example.com", age: 
 usersMap.set("xyz890",{id: 2, name: "Jane Doe", email: "jane@example.com", age: 28 });
 
 console.log(usersMap.get("abc123"));
-console.log("Map size : ", usersMap.size);
+console.log("Map size : ", usersMap.size);*/
+
+
+type Event = 'click' | 'scroll' | 'mousemove';
+type ExcludeEvent = Exclude<Event,'scroll'>;
+
+const handleEvent = (event:ExcludeEvent)=>{
+    console.log(`Handling event : ${event}`);
+}
+
+handleEvent('scroll');
+
+
