@@ -1,11 +1,6 @@
 "use strict";
-/*interface User{
-    id:number,
-    name:string,
-    email:string,
-    age:number
-}
-
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
 type UserProfile = Pick<User, 'name'|'email'>;
 
 type UpdateProps = Pick<User, 'name' | 'email' | 'age'>;
@@ -45,9 +40,17 @@ let user2: User={
 console.log(sumOfAge(user1,user2));
 displayUserProfile(user1);
 displayUserProfile({ name: "Priya", email: "priya@example.com" });*/
-Object.defineProperty(exports, "__esModule", { value: true });
-const config = {
-    endpoint: "https://api.example.com",
-    apiKey: "abcdef123456"
+/*type Users = Record<string,User>;
+
+const users:Users = {
+    "abc123" : {id: 1, name: "John Doe", email: "john@example.com", age: 30 },
+    "xyz890" : {id: 2, name: "Jane Doe", email: "jane@example.com", age: 28 },
 };
+
+console.log(users["abc123"]);*/
+const usersMap = new Map();
+usersMap.set("abc123", { id: 1, name: "John Doe", email: "john@example.com", age: 30 });
+usersMap.set("xyz890", { id: 2, name: "Jane Doe", email: "jane@example.com", age: 28 });
+console.log(usersMap.get("abc123"));
+console.log("Map size : ", usersMap.size);
 //# sourceMappingURL=index.js.map

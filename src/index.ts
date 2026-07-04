@@ -1,10 +1,10 @@
-/*interface User{
+interface User{
     id:number,
     name:string,
     email:string,
     age:number
 }
-
+/*
 type UserProfile = Pick<User, 'name'|'email'>;
 
 type UpdateProps = Pick<User, 'name' | 'email' | 'age'>;
@@ -45,14 +45,19 @@ console.log(sumOfAge(user1,user2));
 displayUserProfile(user1);
 displayUserProfile({ name: "Priya", email: "priya@example.com" });*/
 
+type Users = Record<string,User>;
 
+const users:Users = {
+    "abc123" : {id: 1, name: "John Doe", email: "john@example.com", age: 30 },
+    "xyz890" : {id: 2, name: "Jane Doe", email: "jane@example.com", age: 28 },
+};
 
-interface Config{
-    endpoint : string,
-    apiKey : string
-}
+console.log(users["abc123"]);
 
-const config : Readonly<Config> = {
-    endpoint : "https://api.example.com",
-    apiKey : "abcdef123456"
-}
+const usersMap = new Map<string,User>();
+
+usersMap.set("abc123",{id: 1, name: "John Doe", email: "john@example.com", age: 30});
+usersMap.set("xyz890",{id: 2, name: "Jane Doe", email: "jane@example.com", age: 28 });
+
+console.log(usersMap.get("abc123"));
+console.log("Map size : ", usersMap.size);
